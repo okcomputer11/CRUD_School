@@ -167,23 +167,37 @@ class Ventana_root(Frame):
    
 
     def crear_widgets(self):
+        
+        hi_li_ba_1 = "purple" # highlightbackground
+        hi_li_ba_2 = "violet"
+        fore_1 = "teal" # "cyan"
+        fore_2 = "blue"
+        bg_cour1 = "#bfdaff"
+        hi_li_ba_exit_color = "red"
+        fore_exit_color = "black" # "lavender"
+        # Additionally, tkinter also supports specifying colors using hexadecimal color
+        # codes, such as "#FF0000" for red or "#00FF00" for green.
 
         largo_frame1 = 95
-        frame1 = Frame(self, bg="#bfdaff")
+        frame1 = Frame(self, bg=bg_cour1)
         frame1.place(x=0,y=0,width=largo_frame1, height=alto_total)  
 
         ##### Botones Laterales #####
-        self.btn_nuevo=Button(frame1,text="Nuevo", command=self.fNuevo, highlightbackground="blue", fg="white")
+        self.btn_nuevo=Button(frame1,text="Nuevo", command=self.fNuevo, highlightbackground=hi_li_ba_1, fg=fore_1)
         self.btn_nuevo.place(x=5,y=50,width=80, height=30 )        
         
-        self.btn_modificar=Button(frame1,text="Modificar", command=self.fModificar, highlightbackground="blue", fg="white")
+        self.btn_modificar=Button(frame1,text="Modificar", command=self.fModificar,
+                                   highlightbackground=hi_li_ba_1, fg=fore_1,
+                                   activebackground=fore_2, activeforeground=fore_1,
+                                   background=fore_2,foreground=fore_1)
         self.btn_modificar.place(x=5,y=100,width=80, height=30)                
         
-        self.btn_eliminar=Button(frame1,text="Eliminar", command=self.fEliminar, highlightbackground="blue", fg="white")
+        self.btn_eliminar=Button(frame1,text="Eliminar", command=self.fEliminar, highlightbackground=hi_li_ba_1, fg=fore_1)
         self.btn_eliminar.place(x=5,y=150,width=80, height=30)
         
-        self.btn_salir=Button(frame1,text="Salir/Quit", command=self.master.destroy, highlightbackground="black", fg="yellow")
+        self.btn_salir=Button(frame1,text="Salir/Quit", command=self.master.destroy, highlightbackground=hi_li_ba_exit_color, fg=fore_exit_color)
         self.btn_salir.place(x=5,y=300,width=80, height=30)
+
         
         ###################################################### 
         """
@@ -207,7 +221,7 @@ class Ventana_root(Frame):
         separacion=8
         esp=20
 
-        frame2 = Frame(self,bg="white" ) # o highlightbackground
+        frame2 = Frame(self,bg=bg_cour1 ) # o highlightbackground
         frame2.place(x=100,y=0, width=largo_frame2, height=alto_total)                        
         
         eti1 = Label(frame2,text="dni: ")
@@ -289,10 +303,10 @@ class Ventana_root(Frame):
 
         ##### Botones Centrales #####
 
-        self.btn_guardar=Button(frame2,text="Guardar", command=self.fGuardar, highlightbackground="blue", fg="white")
+        self.btn_guardar=Button(frame2,text="Guardar", command=self.fGuardar, highlightbackground=hi_li_ba_1, fg=fore_1)
         self.btn_guardar.place(x=80,y=ly2+40,width=60, height=30)
         
-        self.btn_cancelar=Button(frame2,text="Cancelar", command=self.fCancelar, highlightbackground="violet", fg="blue")
+        self.btn_cancelar=Button(frame2,text="Cancelar", command=self.fCancelar, highlightbackground=hi_li_ba_2, fg=fore_2)
         self.btn_cancelar.place(x=150,y=ly2+40,width=60, height=30)
 
         ######################################     
@@ -351,3 +365,4 @@ class Ventana_root(Frame):
         
         self.etiqueta_cant_elementos = Label(frame3,width=24,text="cantidad de registros: ")
         self.etiqueta_cant_elementos.place(x=largo_frame3-260, y=alto_total-92)
+

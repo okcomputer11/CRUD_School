@@ -1,0 +1,11 @@
+**/.DS_Store
+**/Students.sql
+**/__pycache__/alumnos_ORM.cpython-310.pyc
+**/__pycache__/ventana.cpython-310.pyc
+**/estructura.sql
+**/log.csv
+**/mi_baseORM.db
+**/numbers.json
+**/pyvenv.cfg
+**/usuarios.db
+

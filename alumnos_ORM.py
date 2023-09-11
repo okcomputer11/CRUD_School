@@ -3,7 +3,7 @@ from tkinter import *
 import csv
 import time
 
-db = SqliteDatabase('Schule.db') # contiene la tabla "Students"
+db = SqliteDatabase('schule.db') # contiene la tabla "Students"
 
 # Falta implementar "Buscar alumno x nombre"
 # Falta implementar "Buscar alumno x dni"

@@ -3,6 +3,9 @@ from tkinter import messagebox as MessageBox
 from ventana_con_login import *
 from log.login_3_modell_mysql import *
 
+# pip install pymysql
+
+
 #############################################################################################################
 # main_con_login.py     --> modulo (actual) principal
 #                           Contiene la gráfica del login (nombre y contraseña del usuario)
@@ -29,7 +32,6 @@ from log.login_3_modell_mysql import *
 #                               cada vez que el usuario mofifica algo (o cuando se logea)
 #
 #############################################################################################################
-
 
 def createGUI():
 

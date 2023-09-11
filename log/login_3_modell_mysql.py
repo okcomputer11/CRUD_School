@@ -1,7 +1,8 @@
 from tkinter import *
 from peewee import *
 
-db = MySQLDatabase(host="localhost", user="root", passwd="sofocles11", database="escuela")
+db = MySQLDatabase(host="localhost", user="root", passwd="sofocles11", database="db_usuarios_old")
+
 
 class BaseModel(Model):
     class Meta:
