@@ -24,7 +24,7 @@ class User_actual:
         self.name = nombre
         self.password = clave
         self.conected = False
-        self.intentos = 5
+        self.intentos = 3 # number of attempts you will have to log in
 
     def verificar(self, ): #usuario, contra):
         print('se ingreso -> nombre: {} y -> contraseña: {}'.format(self.name, self.password))

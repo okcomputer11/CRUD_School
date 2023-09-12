@@ -70,18 +70,28 @@ def createGUI():
 
     # botones
     iniciarSesionButton = ttk.Button(mainFrame,text="Iniciar Sesion",command=lambda:iniciarSesion(ventanaLog, nombre_ingresado, contra_ingresado))
-    iniciarSesionButton.grid(column=1,row=3,ipadx=5,ipady=5,padx=10,pady=10)
+    iniciarSesionButton.grid(column=0,row=3,ipadx=5,ipady=5,padx=10,pady=10)
+
+   # exitButton = ttk.Button(mainFrame,text="Cerrar Sesion",command=cerrarSesion)
+    btn_exit = ttk.Button(mainFrame,text="Exit",command=hacer_exit)
+    btn_exit.grid(column=1,row=3)
 
     # cerrarSesionButton = ttk.Button(mainFrame,text="Cerrar Sesion",command=cerrarSesion)
     btn_mensaje = ttk.Button(mainFrame,text="Olvidó usuario y/o contraseña",command=mensaje_olvido)
-    btn_mensaje.grid(column=0,row=3)
+    btn_mensaje.grid(column=1,row=4)
 
     ventanaLog.mainloop()
+
+def hacer_exit():
+    raise SystemExit(0)
 
 def mensaje_olvido():
     MessageBox.showerror("Error","contactese con el administrador del sistema")
 
 def iniciarSesion(ventana, name_ingresado, pass_ingresado):
+
+    # MySql database --> "db_usuarios_old" --> table Users #
+    
     if usuario.intentos > 0:
         usuario.name = name_ingresado.get()
         usuario.password = pass_ingresado.get()
@@ -98,13 +108,13 @@ def iniciarSesion(ventana, name_ingresado, pass_ingresado):
             if usuario.intentos > 0:
                 MessageBox.showwarning(title='NOMBRE O PASSWORD INCORRECTO', message='Le quedan {} intentos'.format(usuario.intentos))
             else:
-                MessageBox.showerror("5 intentos fallidos","contactese con el administrador del sistema")
+                MessageBox.showerror("3 intentos fallidos","contactese con el administrador del sistema")
                 ventana.destroy()
 
 
 if __name__=="__main__":
 
-    usuario = User_actual()
+    usuario = User_actual() # definde in log/login_3_modell_mysql 
 
     #usuario.conected = True
 
